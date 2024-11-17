@@ -40,8 +40,22 @@ android {
     }
 }
 
-dependencies {
+secrets {
+    // Especifica opcionalmente un nombre de archivo diferente que contenga tus secretos.
+    // El complemento predetermina a "local.properties"
+    propertiesFileName = "secrets.properties"
 
+    // Un archivo de propiedades que contiene valores secretos predeterminados. Este archivo puede
+    // ser registrado en el control de versiones.
+    defaultPropertiesFileName = "local.defaults.properties"
+
+    // Configura qué claves deben ser ignoradas por el complemento proporcionando expresiones regulares.
+    // "sdk.dir" se ignora por defecto.
+    ignoreList.add("keyToIgnore") // Ignora la clave "keyToIgnore"
+    ignoreList.add("sdk.*")       // Ignora todas las claves que coincidan con la expresión regular "sdk.*"
+}
+
+dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
