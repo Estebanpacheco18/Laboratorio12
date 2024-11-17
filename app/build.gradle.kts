@@ -68,4 +68,6 @@ dependencies {
     implementation("com.google.maps.android:maps-compose:$mapsComposeVersion")
     implementation("com.google.maps.android:maps-compose-utils:$mapsComposeVersion")
     implementation("com.google.maps.android:maps-compose-widgets:$mapsComposeVersion")
+    // Places SDK
+    implementation("com.google.android.libraries.places:places:2.5.0")
 }
