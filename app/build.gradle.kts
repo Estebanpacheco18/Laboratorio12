@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.laboratory12"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.laboratory12"
@@ -41,18 +41,10 @@ android {
 }
 
 secrets {
-    // Especifica opcionalmente un nombre de archivo diferente que contenga tus secretos.
-    // El complemento predetermina a "local.properties"
     propertiesFileName = "secrets.properties"
-
-    // Un archivo de propiedades que contiene valores secretos predeterminados. Este archivo puede
-    // ser registrado en el control de versiones.
     defaultPropertiesFileName = "local.defaults.properties"
-
-    // Configura qué claves deben ser ignoradas por el complemento proporcionando expresiones regulares.
-    // "sdk.dir" se ignora por defecto.
-    ignoreList.add("keyToIgnore") // Ignora la clave "keyToIgnore"
-    ignoreList.add("sdk.*")       // Ignora todas las claves que coincidan con la expresión regular "sdk.*"
+    ignoreList.add("keyToIgnore")
+    ignoreList.add("sdk.*")
 }
 
 dependencies {
@@ -71,4 +63,9 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    val mapsComposeVersion = "4.4.1"
+    implementation("com.google.maps.android:maps-compose:$mapsComposeVersion")
+    implementation("com.google.maps.android:maps-compose-utils:$mapsComposeVersion")
+    implementation("com.google.maps.android:maps-compose-widgets:$mapsComposeVersion")
 }
